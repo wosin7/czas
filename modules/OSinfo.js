@@ -1,6 +1,6 @@
 var os = require('os');
 var timer = require('../modules/time');
-var tabs = [];
+var tm = {};
 function getOSinfo() {
     var type = os.type();
     if(type === 'Darwin') {
@@ -9,7 +9,7 @@ function getOSinfo() {
         type = 'Windows';
     }
     var up = os.uptime()
-    tabs = timer.print(up);
+    tm = timer.print(up);
     /* var time = timer.print(up);
     console.log('aaaaa');
     console.log(timer.print(up));
@@ -20,7 +20,7 @@ function getOSinfo() {
     console.log('System:', type);
     console.log('Release:', release);
     console.log('CPU model:', cpu);
-    console.log('Uptime: ' +tabs[0]+' godzin, '+tabs[1]+' minut, '+tabs[2]+' sekund.');
+    console.log('Uptime: ' +tm.h+' godzin, '+tm.m+' minut, '+tm.s+' sekund.');
     console.log('User name:', userInfo.username);
     console.log('Home dir:', userInfo.homedir);
 }

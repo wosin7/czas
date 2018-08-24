@@ -4,7 +4,7 @@ var uptime = up;
 var seconds;
 var minut;
 var hour;
-var tab =[];
+var tm ={};
 /* if (uptime < 3600){
    // console.log('w ifie');
     hour = 0;
@@ -16,10 +16,16 @@ else { */
     hour = Math.floor(uptime / 3600);
     minut = Math.floor((uptime % 3600)/60);
     seconds = Math.floor((uptime % 3600) % 60)
-    tab[0] = hour;
+    return {
+        h: hour,
+        m: minut,
+        s: seconds
+    }
+    //return tm;
+    /* tab[0] = hour;
     tab[1] = minut;
     tab[2] = seconds;
-    return tab;
+    return tab; */
 /* }
 if (hour > 0){
     console.log(hour+' godzin, '+minut+' minut, '+seconds+' sekund.');
